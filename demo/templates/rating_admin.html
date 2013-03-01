@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Demo</title>
+    <style>
+#div2
+{
+background-color:#33CCCC;
+width: 500px;
+height: 400px;
+
+margin: 20px 650px;
+}
+#div1
+{
+background-color:#33CCCC;
+width: 1550px;
+height: 100px;
+margin: 5px 200px 30px 150px;
+}
+</style>
+</head>
+<body bgcolor = '#00FFFF'>
+<div id="div1" >
+        
+    <center><h1><b><i>All ratings</i></b></center>
+        </div><hr><hr>
+<h3><i><b>
+<div id= 'div2'>
+                 {% for item in feedback %}
+                    Posted by :{{ item.posted_by }}<br>
+                    Rating : {{ item.rating }}<br>
+                    Suggestion : {{ item.suggesion }}<br>
+                        
+                        
+<br><br>
+{% endfor %}
+
+   </div>    
+<center><h2><i><a href="{% url app.views.home %}">Back to home Page</a></i></h2></center><br>
+</body>
+</html>
+

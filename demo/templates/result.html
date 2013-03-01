@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Forms Example</title>
+
+<style>
+div
+{
+background-color:#00FFFF;
+width: 1550px;
+height: 140px;
+margin: 10px 200px 25px 50px;
+}
+ 
+</style>
+
+
+    </head>
+    <body>
+<h1><center>Fetching from Models</center></h1><hr><hr>
+        
+            <ul>
+        {% for i in d %}
+                <div>   Posted By :{{ i.posted_by }}</br>
+                   Phone No: {{ i.phn_no }}</br>
+                 Area:   {{ i.area }}</br>
+                  Monthly rent:  {{ i.monthly_rent }}</br>
+                   Sharing : {{ i.sharing }}</br>
+                   Cuisine: {{ i.cuisine }}</br>
+    <br><br><br>
+</div>
+                   {% endfor %}
+<br><br><br>
+    
+            </ul>
+
+       
+<center><h2><i><a href="/">Back to home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url app.views.page %}">Back</a></i></h2></center><br>
+    </body>
+</html>
+
