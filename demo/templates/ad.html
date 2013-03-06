@@ -42,7 +42,7 @@
          <form action="{% url app.views.paste %}" method="post">
             <div id="div3">
 <center>Posted by : {{request.user.username}}</center>
-                {{ ad.as_p }}
+              <table>  {{ form.as_table }}</table>
                 <input type="submit" id="input1">
             </div>
 

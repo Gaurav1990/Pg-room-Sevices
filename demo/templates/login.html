@@ -5,7 +5,7 @@
 {
 background-color:#33CCCC;
 width: 500px;
-height: 200px;
+height: 220px;
 
 margin: 20px 650px;
 }
@@ -16,11 +16,12 @@ margin: 20px 650px;
 <center>		<font color="RED"><h3>{{state}}</h3></font></center>
 <div id=div3><center><h3>
 		<br><br>Username:
-		<input type="text" name="username" value="{{ username}}" /><br />
+		<input type="text" name="username"  /><br />
 		<br>Password:
 		<input type="password" name="password" value="" /><br />
 <br>
 		<input type="submit" value="Log In" />
+        <br><br><a href="{% url app.views.forgot %}"> Forgot Password</a>
 	</div></center></h3></form>
 {% endblock %}
 

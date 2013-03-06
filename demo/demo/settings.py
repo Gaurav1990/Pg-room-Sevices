@@ -8,6 +8,18 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+#SMS_BACKEND = 'sms.backends.console.SMSBackend'
+
+#SENDSMS_BACKEND = 'sendsms.backends.console.SmsBackend'
+
+#SENDSMS_BACKEND = 'app.mysms.SmsBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'pgroomservices@gmail.com'
+EMAIL_HOST_PASSWORD = 'gauravnagpal2002'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 AUTH_PROFILE_MODULE="app.UserProfile"
 
 MANAGERS = ADMINS
@@ -33,7 +45,7 @@ DATABASES = {
 TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
+# http://www.iSMS_BACKEND = 'sms.backends.console.SMSBackend'18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
@@ -125,6 +137,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'app',
+    'sms',
+    'django.contrib.formtools',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

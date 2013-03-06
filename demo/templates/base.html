@@ -34,7 +34,7 @@ margin: 5px 200px 30px 150px;
 
 <div id="div1" >
         
-    <center><h1><b><i>Welcome to Pg/Room Servies</i></b></center>
+    <center><h1><b><i>Welcome to Pg/Room Services</i></b></center>
  {% ifequal request_user.user_type 'owner' %}
          <font color="RED"><center>  <h2>OWNER</h2></font></center>
         {% endifequal %}
@@ -75,7 +75,7 @@ margin: 5px 200px 30px 150px;
 
 {% if request.user.is_authenticated %}
 
-<a href="{% url app.views.post_ad %}">POST AD</a>
+<a href="{% url app.views.paste %}">POST AD</a>
        {% else %}
               <a href=" {% url app.views.error %} ">POST AD</a>     
     {% endif %}&nbsp;&nbsp;
@@ -84,7 +84,7 @@ margin: 5px 200px 30px 150px;
 </b></i></h3>
 {% block content%}{% if not request.user.is_authenticated %}
 <br><br><center><b><h2><font color = "RED"><i>
-Rating of this site is {{rating_avg}}</i></b></font></h2></center>
+Rating of this site is {{rating_avg}}&nbsp;/&nbsp;5</i></b></font></h2></center>
 {% endif %}{% endblock %}
 </body>
 </html>

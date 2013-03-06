@@ -28,6 +28,11 @@ TYPE = (
   
 )
 
+COUN = ( ('INDIA', 'INDIA'),
+         ('US', 'US'),
+         ('CANADA', 'CANADA'),
+         ('PAKISTAN','PAKISTAN'))
+
 RATE = (
     ('1', '1'),
     ('2', '2'),
@@ -47,6 +52,7 @@ class UserProfile(models.Model):
     #re-password = models.CharField(max_length = 10)
     address = models.CharField( max_length = 10)
     user_type = models.CharField(max_length=10, choices = TYPE)
+    password2 = models.CharField(('password') , max_length = 30)
 
 
 class Ad(models.Model):
@@ -61,3 +67,16 @@ class Rating(models.Model):
     posted_by = models.CharField(max_length = 30)
     rating = models.CharField(max_length=10, choices = RATE)
     suggesion = models.TextField()
+
+class Reviews(models.Model):
+    rev = models.ForeignKey(Ad)    
+    voteup = models.IntegerField(default = 0, null = True , unique = False)
+    votedown = models.IntegerField(default = 0, null = True, unique = False)
+
+class Regsitration2(models.Model):
+    company = models.CharField(max_length = 30)
+    country = models.CharField(max_length=10, choices = COUN )
+    city = models.CharField(max_length = 30)
+    zip_code = models.CharField(max_length = 30)
+    phone_num = models.CharField(max_length = 30)
+    

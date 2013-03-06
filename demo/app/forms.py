@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from app.models import Ad , UserProfile , Rating
+from app.models import Regsitration2
 from django import forms
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render_to_response
@@ -9,6 +10,7 @@ from django.forms.widgets import RadioSelect, CheckboxSelectMultiple
 
 TYPE = ( ('owner', 'owner'),
          ('seeker','seeker'))
+
 
 
 class article(ModelForm):
@@ -30,4 +32,9 @@ class reg(forms.Form):
     re_password = forms.CharField(widget = forms.PasswordInput(render_value = True))
     address = forms.CharField()
     user_type = forms.ChoiceField(choices = TYPE)
+
+class reg2(ModelForm):
+    class Meta:
+        model = Regsitration2
+    
 

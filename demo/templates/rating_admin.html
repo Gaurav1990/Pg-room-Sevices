@@ -25,6 +25,7 @@ margin: 5px 200px 30px 150px;
     <center><h1><b><i>All ratings</i></b></center>
         </div><hr><hr>
 <h3><i><b>
+        <center><a href ="{% url app.views.del_rating %}">Delete Rating</a></center>
 <div id= 'div2'>
                  {% for item in feedback %}
                     Posted by :{{ item.posted_by }}<br>
