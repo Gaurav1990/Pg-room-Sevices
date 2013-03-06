@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block head %} {% endblock %}
+{% block style %}
+#div3
+{
+background-color:#33CCCC;
+width: 500px;
+height: 220px;
+
+margin: 20px 650px;
+}
+
+{% endblock %}
+{% block content %}
+	<form action="{% url app.views.login_user %}" method="post">
+<center>		<font color="RED"><h3>{{state}}</h3></font></center>
+<div id=div3><center><h3>
+		You password is sent to your registered mail i.e {{ email_id }}
+    <h3><a href =" {% url app.views.login_user %}">Login Again</a>
+	</div></center></h3></form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
