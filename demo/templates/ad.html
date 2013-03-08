@@ -1,0 +1,55 @@
+
+<html>
+<head>
+<style>
+                p{
+                    width: 1550px;
+                    height: 40px;
+                    margin: 5px 200px 10px 50px;
+                 }
+                 #div3
+                 {
+                    background-color:#33CCCC;
+                 }
+                 label
+                 {
+                    
+                    
+                    margin:15px 100px 5px 500px;
+                    padding-top:0.1px;
+                 }
+                 input
+                 {
+                      
+                      margin:15px 200px 5px 200px;
+                      padding-top:0.1px;
+                 }
+                 select
+                 {
+                      
+                      margin:15px 200px 5px 200px;
+                      padding-top:0.1px;
+                 }
+                 #input1
+                 {
+                    margin-left:850px;
+                 }
+</style></head>
+<body bgcolor= '#00FFFF'>
+  <center><h1><b><i>Welcome to Posting ad </i></b></center>
+        </div><hr><hr>
+<h3><i><b>
+         <form action="{% url app.views.paste %}" method="post">
+            <div id="div3">
+<center>Posted by : {{request.user.username}}</center>
+              <table>  {{ form.as_table }}</table>
+                <input type="submit" id="input1">
+            </div>
+
+        </form>
+        
+        <br><br>
+
+        <center><h2><i><a href="/">Back to home Page</a></i></h2></center><br>
+</body>
+</html>

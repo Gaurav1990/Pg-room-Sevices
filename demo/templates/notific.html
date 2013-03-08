@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block head %} {% endblock %}
+{% block style %}
+#div9
+{
+background-color:#33CCCC;
+
+width: 500px;
+height: 220px;
+
+margin: 20px 650px;
+}
+{% endblock %}
+{% block content %}
+	<form name = "abc" action="{% url app.views.noti %}" method = "POST">
+<center>		<font color="RED"><h3>{{state}}</h3></font></center>
+<div id = "div9"><center><h3>
+
+{% for item in ads %}
+    
+    <input type="checkbox" name = "{{ item.area }}" class="set">{{ item.area }}<br><br>
+{% endfor %}
+<br><br><br>
+<input type="submit" value="submit"/>
+    
+	</div></center></h3></form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

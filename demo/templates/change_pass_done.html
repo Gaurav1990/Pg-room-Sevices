@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block head %} {% endblock %}
+{% block style %}
+#div7
+{
+background-color:#33CCCC;
+width: 500px;
+height: 220px;
+
+margin: 20px 650px;
+}
+
+{% endblock %}
+{% block content %}
+	<form action="" method="post">
+<center>		<font color="RED"><h3>{{state}}</h3></font></center>
+<div id=div7><center><h3>
+		You password is succesfully changes
+    <h3><a href =" {% url app.views.logout_view %}">Login Again</a>
+	</div></center></h3></form>
+{% endblock %}
+
+
+
+
+
+

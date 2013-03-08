@@ -1,0 +1,146 @@
+
+<html>
+<head>
+    <title>PG/Rooms Services{% block title %} {% endblock %}</title>
+<head>
+<style>
+{% block style %}
+{% endblock %}
+
+#div1
+{
+background-color:#33CCCC;
+width: 1550px;
+height: 100px;
+margin: 5px 200px 30px 150px;
+}
+
+#div2
+{
+margin: 5px 200px 30px 150px;
+background-color:#33CCCC;
+}
+
+#div3
+{
+float : right;
+width : 320px;
+height : 400px;
+text-align : center;
+font-size :20px;
+background-color:#33CCCC;
+}
+
+
+#div4
+{
+float:left;
+width : 320px;
+height : 400px;
+font-size :20px;
+background-color:#33CCCC;
+}
+
+#div5
+{
+
+margin: 5px 200px 30px 150px;
+height : 400px;
+width : 1550px;
+
+}
+
+
+p
+{
+    width: 1550px;
+    margin :5px 200px 30px 150px;
+}
+margin: 5px 200px 30px 150px;
+
+
+</style>
+</head>
+<body bgcolor = '#00FFFF'>
+
+<div id="div1" >
+        
+    <center><h1><b><i>Welcome to Pg/Room Services</i></b></center>
+ {% ifequal request_user.user_type 'owner' %}
+         <font color="RED"><center>  <h2>OWNER</h2></font></center>
+        {% endifequal %}
+{% ifequal request_user.user_type 'seeker' %}
+         <font color="RED"><center>  <h2>SEEKER</h2></font></center>
+        {% endifequal %}
+{% ifequal request.user.username 'admin' %}
+         <font color="RED"><center>  <h2>ADMIN</h2></font></center>
+        {% endifequal %}
+        </div><hr><hr>
+<h3><i><b>
+
+<p>
+{% if request.user.is_authenticated %}
+
+    Welcome, {{  request.user.username }} &nbsp;&nbsp;|| <a href="/">HOME</a>&nbsp;&nbsp;|| <a href = "{% url app.views.logout_view %}">LOGOUT</a>
+        {% ifequal request_user.user_type 'owner' %}
+            || <a href="{% url app.views.data %}">ALL OWNERS</a>
+        {% endifequal %}
+        {% ifequal request.user.username 'admin' %}
+            || <a href="{% url app.views.data %}">ALL USERS</a>||&nbsp;&nbsp;<a href="{% url app.views.all_rating %}">RATING</a>&nbsp;&nbsp;||&nbsp;&nbsp;
+<a href="{% url app.views.notification_all %}">EMAIL-NOTIFICATION<a/>
+        {% endifequal %}
+    
+{% if request.user.username != 'admin' %}
+||&nbsp;&nbsp;<a href=" {% url app.views.user_rating %} ">RATING</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href= "{% url app.views.change_pass %}"> CHANGE PASSWORD </a>
+        {% endif %}
+
+
+{% else %}
+    Welcome, Guest &nbsp;&nbsp;&nbsp;&nbsp;|| <a href="/">HOME</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href = "{% url app.views.login_user %} ">LOGIN</a>&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;<a href=" {% url app.views.register %} ">REGISTER</a>
+
+
+
+
+{% endif %}||&nbsp;&nbsp;<a href="{% url app.views.page %}">PG/ROOM</a>&nbsp;&nbsp;||&nbsp;&nbsp;
+
+
+
+
+{% if request.user.is_authenticated %}
+    {% ifequal request_user.user_type 'owner' %}
+        <a href="{% url app.views.paste %}">POST AD</a>
+    {% endifequal %}
+    {% ifequal request_user.user_type 'seeker' %}
+        {% if email_noti %}
+                <a href = "{% url app.views.remove_noti %}">REMOVE NOTIFICATION </a>
+        {% else %}
+                <a href="{% url app.views.notification %}">JOIN FREE EMAIL NOTIFICATION </a>
+        {% endif %}
+{% endifequal %}
+
+{% else %}
+    <a href=" {% url app.views.error %} ">POST AD</a>     
+{% endif %}
+</p>
+</b></i></h3>
+{% block content%}{% if not request.user.is_authenticated %}
+<br><br>
+
+<div id='div5'>
+    <div id='div4'><br><br><br><br><font size = '6'>
+  <center>Rating of this site is </font><br><br><br><font size = '20' color='red'>{{rating_avg}}&nbsp;/&nbsp;5</font></center>
+    </div>
+    <div id='div3'>
+        <br><br><br>
+        Developed and Design by :<br><br><font color = "RED" size = '5'> <br>Gaurav Nagpal<br>
+        Jr. Software Engineer,<br>
+        Tarams Software Technologies Pvt. Ltd.<br>
+        </font><font color="BLUE"><h4>gaurav.nagpal@tarams.com</h4></font>
+
+    </div>
+</div>
+{% endif %}{% endblock %}
+
+</body>
+</html>
+

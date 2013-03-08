@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Forms Example</title>
+
+<style>
+div
+{
+background-color:#00FFFF;
+width: 1550px;
+height: 140px;
+margin: 10px 200px 25px 50px;
+}
+ 
+</style>
+
+
+    </head>
+    <body>
+<h1><center>Your data is saved now you will recieve emails</center></h1><hr><hr>
+        
+
+        {% for item in email_all %}
+           Username: {{ item.user.username }}<br>
+           Required: {{ item.is_require}}<br>
+               Place : {{ item.place }}<br><br><br>
+        {% endfor %}
+       
+<center><h2><i><a href="/">Back to home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url app.views.page %}">Back</a></i></h2></center><br>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

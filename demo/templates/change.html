@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block head %} {% endblock %}
+{% block style %}
+#div8
+{
+background-color:#33CCCC;
+width: 500px;
+height: 250px;
+
+margin: 20px 650px;
+}
+
+{% endblock %}
+{% block content %}
+	<form action="{% url app.views.password_change %}" method="post">
+<center>		<font color="RED"><h3>{{state}}</h3></font></center>
+<div id=div8><center><h3>
+		<br><br>Old Password:&nbsp;
+		<input type="password" name="password1"  /><br />
+		<br>New Password:
+		<input type="password" name="password2" value="" /><br /><br>
+       Re-Password:&nbsp;&nbsp;&nbsp; <input type="password" name="password3" value="" /><br />
+<br><br>
+		<input type="submit" value="Change Password" />
+       
+	</div></center></h3></form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

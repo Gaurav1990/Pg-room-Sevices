@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Forms Example</title>
+
+<style>
+div
+{
+background-color:#00FFFF;
+width: 1550px;
+height: 140px;
+margin: 10px 200px 25px 50px;
+}
+ 
+</style>
+
+
+    </head>
+    <body><hr><hr>
+        
+
+        {% for item in email_noti %}
+           Username: {{ item.user.username }}<br>
+           Required: {{ item.is_require}}<br>
+               Place : {{ item.place }}<br>
+            <a href ="/notification_admin/{{item.id}}">delete</a><br><br><br>
+        {% endfor %}
+       
+<center><h2><i><a href="/">Back to home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url app.views.page %}">Back</a></i></h2></center><br>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
